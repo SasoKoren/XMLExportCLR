@@ -54,10 +54,14 @@ public partial class StoredProcedures
 
                 System.IO.File.WriteAllText(OutputFile.ToString(), sw.ToString(), System.Text.Encoding.UTF8);
             }
+            else
+            {
+                throw new Exception("Parameters must be set");
+            }
         }
         catch
         {
-            throw new Exception("Parameters must be set!");
+            throw;
         }
     }
 }
